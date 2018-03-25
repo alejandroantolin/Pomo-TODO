@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+
+<div class="container-table">
+  <div class="example-header">
+    <md-form-field floatPlaceholder="never">
+      <input id="user__filter" name="user__filter" mdInput #filter placeholder="Filtrar usuarios">
+    </md-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsToDisplay "></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsToDisplay ;"></mat-row>
+  </mat-table>
+</div>
+
+  <div id="container-countdown">
+    <div id="countdown__timer">
+      <h2 id="countdown">{{message}}</h2>
+      <div class="field" data-address-field="countdown">
+        <div class="field__input-wrapper">
+          <input value="Countdown"  data-backup="submit" class="field__input field__button__primary" size="20" type="submit" name="countdown_button" id="countdown_button" maxlength="32">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

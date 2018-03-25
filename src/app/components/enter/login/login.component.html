@@ -1,0 +1,30 @@
+<div id="sign-in-form" class="enter-form">
+  <!-- wrapper form for enter -->
+  <div id="enter-wrapper-form">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <!-- username -->
+      <div class="field" data-address-field="user_name">
+        <div class="field__input-wrapper">
+          <label class="field__label" for="username">Usuario</label>
+          <!-- propiedad autocomplete será establecido si le damos al check "recordar"-->
+          <input  [(ngModel)]="user.username" (keyup)="_onInputChange($event)" placeholder="Usuario" autocomplete="off" data-backup="user_name" class="field__input" size="30" type="text" name="username" id="username" maxlength="32"
+                  #username="ngModel" required>
+        </div>
+      </div>
+
+      <!-- login button -->
+      <div class="field" data-address-field="submit">
+        <div class="field__input-wrapper">
+          <input [disabled]="!loginForm.form.valid" value="Entrar"  data-backup="submit" class="field__input field__button__primary" size="30" type="submit" name="sign_submit" id="sign_submit" maxlength="32">
+        </div>
+      </div>
+      <div class="field" data-address-field="remember">
+          <mat-checkbox class="example-margin" (click)="toggleCheck()">Recordar usuario (test)</mat-checkbox>
+      </div>
+      <div class="redirectoTO__wrapper push_right">
+        <a class="redirectoTO" routerLink="/signin" routerLinkActive="active">Registrar usuario <mat-icon>navigate_next</mat-icon></a>
+      </div>
+
+   </form>
+  </div>
+</div>

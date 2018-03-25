@@ -1,0 +1,20 @@
+<div id="tab_buttons">
+  <span>{{infoApp}}</span>
+  <div class="header_windowControls">
+    <svg (click)="handlerWindow('min')" class="header_shape header_minWindow">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/icons/icons.svg#minimize-window"></use>
+    </svg>
+    <svg (click)="handlerWindow('max')" class="header_shape header_maxWindow">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/icons/icons.svg#maximize-window"></use>
+    </svg>
+    <svg (click)="handlerWindow('close')" class="header_shape header_closeWindow">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/icons/icons.svg#close-window"></use>
+    </svg>
+  </div>
+</div>
+<div>
+	<router-outlet></router-outlet>
+	<div class="footer">
+		<span>Test</span>
+	</div>
+</div>

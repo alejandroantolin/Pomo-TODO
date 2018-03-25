@@ -1,0 +1,38 @@
+<div id="sign-in-form" class="enter-form">
+  <!-- wrapper form for enter -->
+  <div id="enter-wrapper-form">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <!-- username -->
+      <div class="field" data-address-field="user_name">
+        <div class="field__input-wrapper">
+          <label class="field__label" for="username">Usuario</label>
+          <!-- propiedad autocomplete será establecido si le damos al check "recordar"-->
+          <input  [(ngModel)]="user.username" (keyup)="_onInputChange($event)" placeholder="Usuario" autocomplete="off" data-backup="user_name" class="field__input" size="30" type="text" name="username" id="username" maxlength="32"
+                  #username="ngModel" required>
+        </div>
+      </div>
+
+      <!-- email -->
+      <div class="field" data-address-field="email">
+        <div class="field__input-wrapper">
+          <label class="field__label" for="email">Email</label>
+          <!-- propiedad autocomplete será establecido si le damos al check "recordar"-->
+          <input  [(ngModel)]="user.email" (keyup)="_onInputChange($event)" placeholder="Email" autocomplete="off" data-backup="email" class="field__input" size="45" type="email" name="email" id="email" maxlength="45"
+                  #username="ngModel" required>
+        </div>
+      </div>
+
+      <!-- login button -->
+      <div class="field" data-address-field="submit">
+        <div class="field__input-wrapper">
+          <input [disabled]="!loginForm.form.valid" value="Registrar"  data-backup="submit" class="field__input field__button__primary" size="30" type="submit" name="sign_submit" id="sign_submit" maxlength="32">
+        </div>
+      </div>
+
+      <div class="redirectoTO__wrapper push_left">
+        <a class="redirectoTO" routerLink="/login" routerLinkActive="active"><mat-icon>navigate_before</mat-icon> Volver al login</a>
+      </div>
+
+    </form>
+  </div>
+</div>
